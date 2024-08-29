@@ -1,2 +1,2 @@
-# Github_corso
+# Corso_NicolaLavecchia
 Corso Nicola Lavecchia

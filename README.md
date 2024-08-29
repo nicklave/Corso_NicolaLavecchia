@@ -1,2 +1,2 @@
-# Corso_NicolaLavecchia
-Corso Nicola Lavecchia
+# CorsoExperis_NicolaLavecchia
+Esercitazioni in Python

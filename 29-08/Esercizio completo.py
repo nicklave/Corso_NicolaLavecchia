@@ -29,7 +29,7 @@ while n != -1:  #finchè non si passa la condizione di terminazione
     else:
         print("Il numero",n,"è dispari")
     n = int(input("Inserisci un numero: "))  #finchè il ciclo non termina do la possibilità di inserire un altro numero
-print("Fine primo punto\n")
+print("\nFine primo punto\n")
 
 #Secondo punto
 print("Inizio secondo punto\n")
@@ -38,23 +38,23 @@ while x >= 0: #finchè il numero dato è >= 0 lo stampo
     print(x)
     x -= 1  #decremento il contatore fino ad arrivare alla condizione di terminazione
 
-print("Fine secondo punto\n")
+print("\nFine secondo punto\n")
 
 #Terzo punto
 print("Inizio terzo punto\n")
 l = [1,2,3,4,5]   #inizializzo una lista
 for elem in l:    #inizializzo un ciclo
     print("Il quadrato di",elem, "è ", elem**2)  #stampo direttamente il quadrato elemento per elemento
-print("Fine terzo punto\n")
+print("\nFine terzo punto\n")
 
 #Quarto punto
 print("Inizio quarto punto\n")
 l = []    #inizializzo una lista vuota
 for i in range(10):  #inizializzo un ciclo di 10 elementi
-    n = randint(0,25)  #memorizzo un numero random compreso tra 0 e 24 
+    n = randint(0,25)  #memorizzo un numero random compreso tra 0 e 25
     l.append(n)   #inserisco il suddetto numero in lista fino ad arrivare a 10 elementi
 
-print("La lista è",l)   #stampo la lista
+print("La lista è: ",l)   #stampo la lista
 
 if len(l)>0:
     massimo = 0  #inizializzo un intero
@@ -66,12 +66,12 @@ if len(l)>0:
     count = 0    #inizializzo un contatore
     while count < len(l):   #finchè il contatore è minore della lunghezza della lista
         count += 1          #aumento il contatore
-    print("Il numero di elementi in lista è",count)   #stampo il contatore
+    print("Il numero di elementi in lista è: ",count)   #stampo il contatore
 
 else:
     print("La lista è vuota")
     
-print("Fine quarto punto")
+print("\nFine quarto punto")
 
 
 

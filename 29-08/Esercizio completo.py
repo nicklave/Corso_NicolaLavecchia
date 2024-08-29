@@ -51,7 +51,7 @@ print("\nFine terzo punto\n")
 print("Inizio quarto punto\n")
 l = []    #inizializzo una lista vuota
 for i in range(10):  #inizializzo un ciclo di 10 elementi
-    n = randint(0,25)  #memorizzo un numero random compreso tra 0 e 25
+    n = int(input("Inserisci un numero: "))  #Faccio scegliere un numero all'utente
     l.append(n)   #inserisco il suddetto numero in lista fino ad arrivare a 10 elementi
 
 print("La lista è: ",l)   #stampo la lista

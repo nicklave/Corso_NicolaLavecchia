@@ -22,51 +22,52 @@ from random import randint
 
 #Primo punto
 print("Inizio primo punto\n")
-n = int(input("Inserisci un numero oppure -1 per uscire: "))
-while n != -1:
-    if n%2==0:
+n = int(input("Inserisci un numero oppure -1 per uscire: "))  #inizializzo un intero da console
+while n != -1:  #finchè non si passa la condizione di terminazione
+    if n%2==0:  #se il resto della divisione intera per due è uguale a zerp il numero è pari
         print("Il numero",n,"è pari")
     else:
         print("Il numero",n,"è dispari")
-    n = int(input("Inserisci un numero: "))
+    n = int(input("Inserisci un numero: "))  #finchè il ciclo non termina do la possibilità di inserire un altro numero
 print("Fine primo punto\n")
 
 #Secondo punto
 print("Inizio secondo punto\n")
-x = int(input("Inserisci un numero: "))
-while x >= 0:
+x = int(input("Inserisci un numero: ")) #inizializzo un intero da console
+while x >= 0: #finchè il numero dato è >= 0 lo stampo
     print(x)
-    x -= 1
+    x -= 1  #decremento il contatore fino ad arrivare alla condizione di terminazione
 
 print("Fine secondo punto\n")
 
 #Terzo punto
 print("Inizio terzo punto\n")
-l = [1,2,3,4,5]
-for elem in l:
-    print("Il quadrato di",elem, "è ", elem**2)
+l = [1,2,3,4,5]   #inizializzo una lista
+for elem in l:    #inizializzo un ciclo
+    print("Il quadrato di",elem, "è ", elem**2)  #stampo direttamente il quadrato elemento per elemento
 print("Fine terzo punto\n")
 
 #Quarto punto
 print("Inizio quarto punto\n")
-l = []
-for i in range(10):
-    n = randint(0,25)
-    l.append(n)
+l = []    #inizializzo una lista vuota
+for i in range(10):  #inizializzo un ciclo di 10 elementi
+    n = randint(0,25)  #memorizzo un numero random compreso tra 0 e 24 
+    l.append(n)   #inserisco il suddetto numero in lista fino ad arrivare a 10 elementi
 
-print("La lista è",l)
+print("La lista è",l)   #stampo la lista
 
 if len(l)>0:
-    massimo = 0
-    for i in range(len(l)):
-        if l[i]>massimo:
-            massimo = l[i]
+    massimo = 0  #inizializzo un intero
+    for i in range(len(l)):   #inizializzo un ciclo che segue gli indici della lista
+        if l[i]>massimo:      # se il numero preso attualmente è maggiore del massimo memorizzato fino ad ora 
+            massimo = l[i]    #sostituisco a massimo quel numero
     print("Il massimo in lista è:", massimo)
 
-    count = 0
-    while count < len(l):
-        count += 1
-    print("Il numero di elementi in lista è",count)
+    count = 0    #inizializzo un contatore
+    while count < len(l):   #finchè il contatore è minore della lunghezza della lista
+        count += 1          #aumento il contatore
+    print("Il numero di elementi in lista è",count)   #stampo il contatore
+
 else:
     print("La lista è vuota")
     

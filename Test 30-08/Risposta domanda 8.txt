@@ -1,0 +1,14 @@
+Le principali metodologie applicative in ambito IT sono Agile e Waterfall:
+
+La metodologia waterfall è un approccio sequenziale diviso in fasi specifiche, durante i progetti eseguiti tramite essa non è possibile passare alle parti successive senza aver completato le precedenti.
+
+Al contrario la Agile è caratterizzata da una gestione tramite cicli che si ripetono, chiamati sprint durante i quali si rilasciano parti del progetto. Questa è altamente flessibile e adattabile
+
+I principali pro e contro:
+
+Tramite la waterfall viene molto facile stimare tempi e costi, inoltre vi è un controllo più rigoroso. Inoltre è più facile lavorare in quei progetti in cui i task sono ben definiti e chiari dall'inizio.
+Di contro è difficile tornare sui propri passi per apportare modifiche, per esempio nel caso in cui ci sia un cambiamento dei requisiti da parte del cliente
+
+La agile garantisce al contrario un'elevata flessibilità, è ideale in quei progetti in cui il committente preferisce essere periodicamente coinvolto all'interno del progetto. é possibile infatti modificare e adattare le specifiche in base alle richieste del cliente anche a lavoro in corso.
+Un altro punto a favore è la presenza di prototipi del prodotto in modo che il cliente possa vedere il lavoro prima che questo sia finito.
+Di contro è più difficilmente attuabile in quanto richiede un team collaborativo e integrato. Inoltre una mancata pianificazione rigida iniziale potrebbe rappresentare un problema nelle fasi avanzate.

@@ -9,9 +9,10 @@ while x != 'no':
     l2 = []
     l_ris = []
     for i in range(5):
-        n = int(input("Quale numero si vuole inserire in lista: "))
+        n = int(input("Quale numero si vuole inserire nella posizione ",i,"della lista 1: "))
+        m = int(input("Quale numero si vuole inserire nella posizione ",i,"della lista 2: "))
         l.append(n)
-        l2.append(n)
+        l2.append(m)
         l_ris.append(l[i]+l2[i])
     print("Ecco la lista formata dalle somme degli elementi delle prime due: ", l_ris)
     x = input("Vuoi ripetere? digitare no per uscire: ")

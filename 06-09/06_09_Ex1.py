@@ -1,7 +1,7 @@
 import random
 
-def casuale():
-    numero = random.randint(1,100)  #inizializzo un numero random
+def casuale(x,y):
+    numero = random.randint(x,y)  #inizializzo un numero random
     return numero
 
 def indovinaNumero(numero):
@@ -22,7 +22,7 @@ def indovinaNumero(numero):
             n = int(input("Indovina il numero: "))
         
 def main():
-    n = casuale()
+    n = casuale(1,100)
     #print("Numero da indovinare: ",n)
     print(indovinaNumero(n))
 

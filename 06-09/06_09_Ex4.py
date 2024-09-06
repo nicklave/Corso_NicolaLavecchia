@@ -11,10 +11,12 @@ def decoratore(funzione):
                 resto = x - (x/i)
                 if resto.is_integer() :
                     return False
-                return True
+            return True
         if primo_o_no(x) == False:
             ris = funzione(x,*args,**kwargs)
             return ris
+        else:
+            return True
     return wrapper
     
         

@@ -19,7 +19,6 @@ def risultato(funzione):
     return wrapper
         
 
-
 @risultato
 def area_triangolo(base,altezza):
     area = (base*altezza)/2

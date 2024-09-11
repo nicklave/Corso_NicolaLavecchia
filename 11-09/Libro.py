@@ -1,7 +1,12 @@
 class Libro:
     
     def __init__(self,titolo,autore,pagine):
-        self.titolo = titolo
+        try:
+            if not self.titolo.isalnum():
+                self.titolo = titolo
+        except:
+            print("Il titolo non è valido")
+
         self.autore = autore
         self.pagine = int(pagine)
 

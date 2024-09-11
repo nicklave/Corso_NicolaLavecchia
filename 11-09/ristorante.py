@@ -4,6 +4,8 @@ class Ristorante:
         if isinstance(nome,str) and isinstance(tipo_cucina,str):
             self.nome = nome
             self.tipo_cucina = tipo_cucina
+        else:
+            print("Il nome e il tipo di cucina devono essere stringhe")
         
         self.aperto = False
         self.dizionario = {}
@@ -29,7 +31,9 @@ class Ristorante:
     def aggiungi_al_menu(self,chiave,valore):
         if isinstance(chiave,str) and isinstance(valore,float):
             if chiave not in self.dizionario:
-                self.dizionario[chiave] = valore
+                self.dizionario[chiave] = float(valore)
+        else:
+            print("Errore: i valori devono essere rispettivamente una stringa e un float")
 
     def togli_dal_menu(self,chiave):
         if chiave in self.dizionario:

@@ -76,7 +76,7 @@ def condizioni():
 
 def main():
     x = input("Scrivi un numero da 0 a 10 e ti restituisco una funzione a sorpresa oppure maggiore di 10 per uscire")
-    while x > 10:
+    while x < 10:
         if x == 0:
             print(condizioni())
         elif x == 1:

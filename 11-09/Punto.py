@@ -3,7 +3,11 @@ import math
 class Punto:
 
     def __init__(self,x,y):
-        self.x = float(x)
+        try:
+            if not isinstance(x,float):
+                self.x = float(x)
+        except:
+            print("Il punto in un piano deve essere un numero!")
         self.y = float(y)
     
     def muovi(self,dx,dy):
@@ -12,8 +16,13 @@ class Punto:
     
     def distanza_da_origine(self):
         somma = self.x**2 + self.y**2
-        d = math.sqrt(somma)
+        d = round(math.sqrt(somma),1)
         return d
+
+p = Punto(10,3)
+p.muovi(3,2)
+print(p.distanza_da_origine())
+
     
 
 

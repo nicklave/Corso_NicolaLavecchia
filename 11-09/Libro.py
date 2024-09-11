@@ -10,7 +10,6 @@ class Libro:
         self.autore = autore
         self.pagine = int(pagine)
 
-
     def __str__(self):
         s = "Il libro " + self.titolo + " è stato scritto da " + self.autore + " e ha pagine " + str(self.pagine)
         return s

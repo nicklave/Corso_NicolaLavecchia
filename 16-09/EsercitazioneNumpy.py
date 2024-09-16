@@ -1,23 +1,21 @@
 import numpy as np
 import copy
 
-#  Utilizza la funzione np.arange per creare
-#  un array di numeri interi da 10 a 49.
-#  Verifica il tipo di dato dell'array e
-#  stampa il risultato.
-#  Cambia il tipo di dato dell'array in
-#  float64 e verifica di nuovo il tipo di
-#  dato.
-#  Stampa la forma dell'array.
 
+#TIPO DI DATO E FORMA
+
+#  Utilizza la funzione np.arange per creare un array di numeri interi da 10 a 49.
 a = np.arange(10,50)
 
+#  Verifica il tipo di dato dell'array e stampa il risultato.
 print(f"Tipo iniziale dell'array: {a.dtype}")
 
+#  Cambia il tipo di dato dell'array in float64 e verifica di nuovo il tipo di dato.
 a.dtype = 'float64'
 
 print("Tipo modificato dell'array: ",a.dtype)
 
+#  Stampa la forma dell'array.
 print("Forma dell'array: ",a.shape)
 
 

@@ -16,3 +16,5 @@ print(a.dtype)
 a.dtype = 'float64'
 
 print(a.dtype)
+
+print(a.shape)

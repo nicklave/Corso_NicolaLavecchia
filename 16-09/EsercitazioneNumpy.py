@@ -40,7 +40,7 @@ print(f"Da indice 5 a indice 15 {array[5:15]}")
 
 #ogni terzo elemento
 
-print(f"Ogni terzo elemento: {array[::3]}")
+print(f"Ogni terzo elemento: {array[2:21:3]}")
 
 #modifico tramite slicing
 array2 = copy.copy(array)

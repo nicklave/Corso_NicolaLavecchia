@@ -42,7 +42,7 @@ print(f"Ogni terzo elemento: {array[2:21:3]}")
 
 #modifico tramite slicing
 array2 = copy.copy(array)
-array3 = copy.copy(array)
+array3 = array.copy()
 
 array3[5:10] = 99
 

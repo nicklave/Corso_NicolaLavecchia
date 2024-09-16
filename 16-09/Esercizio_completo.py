@@ -75,6 +75,8 @@ def main():
                 if riga == colonna:
                     det = np.linalg.det(matrice)
                     print("Il determinante della matrice è",det)
+                else:
+                    print("La matrice non è quadrata!")
         
         
         elif menu == 'esci':

@@ -95,7 +95,7 @@ print(f"Array di 50 numeri equidistanti:\n {new_array}\n")
 #  Utilizza np.random.random per creare un array di 50 numeri casuali compresi tra 0 e 1.
 
 new_arr = np.random.random(size = 50)
-new_arr2 = np.round(equi,3)
+new_arr2 = np.round(new_arr,3)
 print(f"Array random da 0 a 1:\n {new_arr2}\n")
 
 

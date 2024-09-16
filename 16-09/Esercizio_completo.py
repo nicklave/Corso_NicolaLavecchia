@@ -26,7 +26,7 @@ def main():
 
     
     while True:
-        menu = input("\nMenù\nPremi 1 per creare una matrice\nPremi 2 per creare la sottomatrice centrale\nPremi 3 per trasporre la matrice e stamparla\nPremi 4 per la somma della matrice\nPremi esci per uscire\n")
+        menu = input("""Menù\nPremi 1 per creare una matrice\nPremi 2 per creare la sottomatrice centrale\nPremi 3 per trasporre la matrice e stamparla\nPremi 4 per la somma della matrice\nPremi 5 per creare una matrice con le stesse dimensioni e moltiplicarla alla prima\nPremi 6 per la media degli elementi della matrice\nPremi 7 per il determinante della matrice\nPremi esci per uscire\n""")
 
         if menu == '1':
             riga = int(input("Quante righe deve avere la matrice? "))
@@ -52,6 +52,30 @@ def main():
                 print("Non hai ancora creato una matrice!")
             else:
                 print(f"La somma della matrice è {np.sum(matrice)}")
+
+        elif menu == '5':
+            if not creata:
+                print("Non hai ancora creato una matrice!")
+            else:
+                matrice2 = np.random.rand(riga,colonna)
+                prodotto = matrice*matrice2
+                print(f"La matrice prodotto è:\n {prodotto}")
+
+        elif menu == '6':
+            if not creata:
+                print("Non hai ancora creato una matrice!")
+            else:
+                media = np.sum(matrice)/(riga*colonna)
+                print("La media degli elementi della matrice è:",media)
+
+        elif menu == '7':
+            if not creata:
+                print("Non hai ancora creato una matrice!")
+            else:
+                if riga == colonna:
+                    det = np.linalg.det(matrice)
+                    print("Il determinante della matrice è",det)
+        
         
         elif menu == 'esci':
             print("Uscita dal programma")

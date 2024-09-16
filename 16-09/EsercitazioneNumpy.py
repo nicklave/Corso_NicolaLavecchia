@@ -83,4 +83,34 @@ print(f"Matrice 4x3:\n {matrice.reshape(4,3)}\n")
 somma_arr = np.sum(arr)
 somma_matr = np.sum(matrice)
 
-print(f"La somma dell'array è {somma_arr}\nLa somma della matrice è {somma_matr}")
+print(f"La somma dell'array è {somma_arr}\nLa somma della matrice è {somma_matr}\n")
+
+
+# Utilizza np.linspace per creare un array di 50 numeri equidistanti tra 0 e 10.
+
+equi = np.linspace(0,10,50)
+new_array = np.round(equi,3)
+print(f"Array di 50 numeri equidistanti:\n {new_array}\n")
+
+#  Utilizza np.random.random per creare un array di 50 numeri casuali compresi tra 0 e 1.
+
+new_arr = np.random.random(size = 50)
+new_arr2 = np.round(equi,3)
+print(f"Array random da 0 a 1:\n {new_arr2}\n")
+
+
+#  Somma i due array elemento per elemento per ottenere un nuovo array.
+
+somma = new_array + new_arr2
+print(f"Somma elemento per elemento:\n {somma}\n")
+
+#  Calcola la somma totale degli elementi del nuovo array.
+
+print(f"Somma del nuovo array: {np.sum(somma)}\n")
+
+#  Calcola la somma degli elementi del nuovo array che sono maggiori di 5.
+
+maggiori = somma[somma>5]
+print(f"Elementi maggiori di 5:\n {maggiori}\n")
+
+#  Stampa gli array originali, il nuovo array risultante dalla somma e le somme calcolate.

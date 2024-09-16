@@ -44,9 +44,14 @@ print(f"Ogni terzo elemento: {array[2:21:3]}")
 
 #modifico tramite slicing
 array2 = copy.copy(array)
+array3 = copy.copy(array)
+
+array3[5:10] = 99
 
 indici = np.array([5,6,7,8,9])
 
 array2[indici] = 99 
 
-print(f"Array modificato tramite slicing: {array2}")
+print(f"Array modificato tramite fancy indexing: {array2}")
+
+print(f"Array modificato tramite slicing: {array3}")

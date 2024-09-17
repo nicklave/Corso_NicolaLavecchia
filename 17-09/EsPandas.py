@@ -10,12 +10,12 @@ def creazione():
     citta = []
     stipendio = []
 
-    for i in range(5):
+    for i in range(10):
         indice_nomi = np.random.randint(0,len(lista_nomi))
         nomi.append(lista_nomi[indice_nomi])
         indice_citta = np.random.randint(0,len(lista_citta))
         citta.append(lista_citta[indice_citta])
-        eta.append(np.random.randint(18,45))
+        eta.append(np.random.randint(18,80))
         stipendio.append(np.random.randint(1200,2500))
     
     eta.pop(np.random.randint(0,5))
@@ -26,6 +26,15 @@ def creazione():
     df = pd.DataFrame(dizionario)
 
     return df
+
+def categoria_eta(eta):
+    if eta <= 18:
+        return 'Giovane'
+    elif eta > 18 and eta <= 65:
+        return 'Adulto'
+    else:
+        return 'Senior'
+    
 
 def main():
     df = creazione()
@@ -43,10 +52,22 @@ def main():
 
     df = df.drop_duplicates()
 
-    df['Eta'].fillna(df['Eta'].mean(), inplace = True)
+    df['Eta'].fillna(df['Eta'].median(), inplace = True)
     df['Città'].fillna('Roma', inplace = True)
 
+    df = df.drop_duplicates()
+
     print(f"Nuovo data frame:\n {df}\n")
+
+    print(df.columns)
+
+    df['Categoria Eta'] = df['Eta'].apply(categoria_eta)
+
+    print(f"Nuovo data frame:\n {df}\n")
+
+    df.to_csv('Dipendenti.csv')
+
+
 
 main()
 

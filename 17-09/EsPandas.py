@@ -3,7 +3,7 @@ import pandas as pd
 
 def creazione():
     lista_nomi = ['Alice', 'Maria', 'Marco', 'Maria']
-    lista_citta = ['Roma', 'Milano', None , 'Firenze', 'Firenze'] 
+    lista_citta = ['Roma', 'Milano', np.nan , 'Firenze', 'Firenze'] 
 
     nomi = []
     eta = []
@@ -50,20 +50,17 @@ def main():
     std_eta = df['Eta'].std()
     std_stip = df['Stipendio'].std()
 
-    df = df.drop_duplicates()
 
     df['Eta'].fillna(df['Eta'].median(), inplace = True)
     df['Città'].fillna('Roma', inplace = True)
 
-    df = df.drop_duplicates()
+    df = df.drop_duplicates(subset=['Nome', 'Città'])
 
     print(f"Nuovo data frame:\n {df}\n")
-
-    print(df.columns)
 
     df['Categoria Eta'] = df['Eta'].apply(categoria_eta)
 
-    print(f"Nuovo data frame:\n {df}\n")
+    print(f"Nuovo data frame con nuova colonna:\n {df}\n")
 
     df.to_csv('Dipendenti.csv')
 

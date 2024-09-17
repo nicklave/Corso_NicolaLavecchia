@@ -25,6 +25,7 @@ df['Data'] = df['Data'].dt.strftime('%Y-%m-%d')
 
 df = df.drop_duplicates()
 
+
 prod_casuale = np.random.choice(lista_prodotti)
 
 citta_casuale = np.random.choice(lista_citta)

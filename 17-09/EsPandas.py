@@ -51,8 +51,8 @@ def main():
     std_stip = df['Stipendio'].std()
 
 
-    df['Eta'].fillna(df['Eta'].median(), inplace = True)
-    df['Città'].fillna('Roma', inplace = True)
+    df['Eta'] = df['Eta'].fillna(df['Eta'].median())
+    df['Città'] = df['Città'].fillna('Roma')
 
     df = df.drop_duplicates(subset=['Nome', 'Città'])
 

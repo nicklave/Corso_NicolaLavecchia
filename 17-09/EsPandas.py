@@ -41,6 +41,8 @@ def main():
     print(f"Data frame originale:\n {df}\n")
     #print(df.head)
 
+    print("Tipi delle colonne: \n", df.dtypes,"\n")
+
     media_eta = df['Eta'].mean()
     media_stip = df['Stipendio'].mean()
 

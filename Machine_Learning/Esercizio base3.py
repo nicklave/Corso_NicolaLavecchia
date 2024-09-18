@@ -65,5 +65,10 @@ class ModelloWine:
         except:
             print("Non hai ancora eseguito il modello!")
 
-
+modello = ModelloWine
+modello.standardizzazione()
+modello.divisione_dati()
+modello.modello()
+modello.score()
+modello.performance()
 

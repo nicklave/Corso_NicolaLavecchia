@@ -8,27 +8,51 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 import numpy as np
 
-data = load_iris()
+class ModelloML:
 
-X = data.data
-y = data.target
+    def __init__(self):
 
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+        self.X, self.y = self.caricamento_dati()
+        self.X_scaled = None
+        self.X_train = None
+        self.X_test = None
+        self.y_train = None
+        self.y_test = None
+        self.predizioni = None
+        self.model = None
 
-X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.3,random_state=42)
+    def caricamento_dati():
+        data = load_iris()
 
-model = DecisionTreeClassifier()
-model.fit(X_train,y_train)
+        X = data.data
+        y = data.target
 
-predizioni = model.predict(X_test)
+        return X,y
 
-prestazioni = accuracy_score(y_test,predizioni)
+    def standardizzazione(X):
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(X)
+        
+        return X_scaled
 
-print("\nAccuratezza: ",prestazioni)
 
-report = classification_report(y_test, predizioni)
-print("\\nReport: \n",report)
+    def split_test(X,y):
+        X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.3,random_state=42)
 
-cm = confusion_matrix(y_test, predizioni)
-print("\\nMatrice di confusione: \n",cm)
+        return X_train,X_test,y_train,y_test
+
+
+    def modello(X_train,X_test,y_train,y_test):
+        model = DecisionTreeClassifier()
+        model.fit(X_train,y_train)
+
+        predizioni = model.predict(X_test)
+
+        prestazioni = accuracy_score(y_test,predizioni)
+
+
+    def report(y_test,predizioni):
+        report = classification_report(y_test, predizioni)
+        cm = confusion_matrix(y_test, predizioni)
+
+

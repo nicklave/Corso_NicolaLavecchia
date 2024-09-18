@@ -9,9 +9,7 @@ from sklearn.metrics import confusion_matrix
 import numpy as np
 
 class ModelloML:
-
     def __init__(self):
-
         self.X, self.y = self.caricamento_dati()
         self.X_scaled = None
         self.X_train = None
@@ -21,38 +19,54 @@ class ModelloML:
         self.predizioni = None
         self.model = None
 
-    def caricamento_dati():
-        data = load_iris()
+    def caricamento_dati(self):
 
+        data = load_iris()
         X = data.data
         y = data.target
+        return X, y
 
-        return X,y
+    def standardizzazione(self):
 
-    def standardizzazione(X):
         scaler = StandardScaler()
-        X_scaled = scaler.fit_transform(X)
+        self.X_scaled = scaler.fit_transform(self.X)
+        return self.X_scaled
+
+    def split_test(self):
+
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X_scaled, self.y, test_size=0.3, random_state=42)
+        return self.X_train, self.X_test, self.y_train, self.y_test
+
+    def modello(self):
+
+        self.model = DecisionTreeClassifier()
+        self.model.fit(self.X_train, self.y_train)
+        self.predizioni = self.model.predict(self.X_test)
+        return self.predizioni
+
+    def report(self):
+  
+        try:
+            report = classification_report(self.y_test, self.predizioni)
+            cm = confusion_matrix(self.y_test, self.predizioni)
+
+            print("Classification Report:")
+            print(report)
+            print("Confusion Matrix:")
+            print(cm)
+
+            return report, cm
+
+        except:
+            print("Il modello non è stato eseguito. Esegui il metodo 'modello' prima di 'report'.")
+
+
         
-        return X_scaled
 
-
-    def split_test(X,y):
-        X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.3,random_state=42)
-
-        return X_train,X_test,y_train,y_test
-
-
-    def modello(X_train,X_test,y_train,y_test):
-        model = DecisionTreeClassifier()
-        model.fit(X_train,y_train)
-
-        predizioni = model.predict(X_test)
-
-        prestazioni = accuracy_score(y_test,predizioni)
-
-
-    def report(y_test,predizioni):
-        report = classification_report(y_test, predizioni)
-        cm = confusion_matrix(y_test, predizioni)
+ml_model = ModelloML()
+ml_model.standardizzazione()
+ml_model.split_test()
+#ml_model.modello()
+ml_model.report()
 
 

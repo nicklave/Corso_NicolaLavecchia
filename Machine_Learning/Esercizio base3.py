@@ -10,16 +10,21 @@ from sklearn.metrics import mean_squared_error
 
 data = load_wine()
 
-print(data['DESCR'])
-
+#print(data['DESCR'])
 
 class ModelloWine:
 
     def __init__(self):
-        data = load_wine
-        self.X = data.data
-        self.Y = data.target
+        self.X = None
+        self.Y = None
     
+    def caricamento_dati(self):
+
+        data = load_wine()
+        self.X = data.data
+        self.y = data.target
+        return self.X, self.y
+
     def standardizzazione(self):
         stdX = StandardScaler().fit_transform(self.X)
 
@@ -53,8 +58,8 @@ class ModelloWine:
 
         try:
             report = classification_report(self.y_test,self.predizione)
-            matrice = confusion_matrix(self.y,self.predizione)
-            cross_validation = cross_val_score(DecisionTreeClassifier(),self.X_train,self.y_train)
+            matrice = confusion_matrix(self.y_test,self.predizione)
+            cross_validation = cross_val_score(DecisionTreeClassifier(),self.X_train,self.y_train,cv=5)
 
             print(f"Classification report:\n {report}")
             print(f"\nMatrice di confusione:\n {matrice}")
@@ -65,7 +70,8 @@ class ModelloWine:
         except:
             print("Non hai ancora eseguito il modello!")
 
-modello = ModelloWine
+modello = ModelloWine()
+modello.caricamento_dati()
 modello.standardizzazione()
 modello.divisione_dati()
 modello.modello()

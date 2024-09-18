@@ -66,7 +66,7 @@ class ModelloML:
 ml_model = ModelloML()
 ml_model.standardizzazione()
 ml_model.split_test()
-#ml_model.modello()
+ml_model.modello()
 ml_model.report()
 
 

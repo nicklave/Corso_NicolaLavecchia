@@ -2,6 +2,7 @@ from sklearn.datasets import load_wine
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import cross_val_score
@@ -37,8 +38,8 @@ class ModelloWine:
 
         return self.X_train,self.X_test,self.y_train,self.y_test
     
-    def modello(self):
-        clf = DecisionTreeClassifier()
+    def modello(self,model):
+        clf = model
         clf.fit(self.X_train,self.y_train)
         self.predizione = clf.predict(self.X_test)
 
@@ -53,12 +54,12 @@ class ModelloWine:
         except:
             print("Non hai ancora eseguito il modello!")
     
-    def performance(self):
+    def performance(self,modello):
 
         try:
             self.report = classification_report(self.y_test,self.predizione)
             self.matrice = confusion_matrix(self.y_test,self.predizione)
-            self.cross_validation = cross_val_score(DecisionTreeClassifier(),self.X_train,self.y_train,cv=5)
+            self.cross_validation = cross_val_score(modello,self.X_train,self.y_train,cv=5)
 
             return self.report, self.matrice
         except:
@@ -80,12 +81,13 @@ class ModelloWine:
         print(f"\nMatrice di confusione:\n {self.matrice}")
         print(f"\nCross validation:\n {self.cross_validation}")
 
-
+decisionTree = DecisionTreeClassifier()
+knn = KNeighborsClassifier()
 modello = ModelloWine()
 modello.caricamento_dati()
 modello.standardizzazione()
 modello.divisione_dati()
-modello.modello()
+modello.modello(decisionTree)
 modello.score()
-modello.performance()
+modello.performance(decisionTree)
 

@@ -13,8 +13,6 @@ from scipy.stats import uniform
 
 data = load_wine()
 
-#print(data['DESCR'])
-
 class ModelloConPipeline:
 
     def __init__(self):
@@ -44,25 +42,25 @@ class ModelloConPipeline:
         return self.pipeline
     
     def distribuzione_parametri(self):
-        self.paramametri = {
-        'pca__n_components': np.random.randint(5, 13, size=10),
-        'gbc__n_estimators': np.random.randint(50, 200, size=10),
-        'gbc__learning_rate': np.random.uniform(0.01, 0.21, size=10),
-        'gbc__max_depth': np.random.randint(1, 5, size=10),
-        'gbc__subsample': np.random.uniform(0.6, 1, size=10),
-        'gbc__min_samples_split': np.random.randint(2, 10, size=10),
-        'gbc__min_samples_leaf': np.random.randint(1, 10, size=10),
+        self.parametri = {
+        'pca__n_components': sp_randint(5, 13),
+        'gbc__n_estimators': sp_randint(50, 200),
+        'gbc__learning_rate': uniform(0.01, 0.2),
+        'gbc__max_depth': sp_randint(1, 5),
+        'gbc__subsample': uniform(0.6, 0.4),
+        'gbc__min_samples_split': sp_randint(2, 10),
+        'gbc__min_samples_leaf': sp_randint(1, 10),
         'gbc__max_features': ['auto', 'sqrt', 'log2', None]
         }
 
-        return self.paramametri
+        return self.parametri
     
     def modello(self):
 
         cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
         self.random_search = RandomizedSearchCV(
-            self.pipeline, param_distributions=self.paramametri, n_iter=50, cv=cv,
+            self.pipeline, param_distributions=self.parametri, n_iter=50, cv=cv,
             scoring='accuracy', random_state=42, n_jobs=-1)
 
         self.random_search.fit(self.X_train,self.y_train)
@@ -112,4 +110,4 @@ modello.distribuzione_parametri()
 modello.modello()
 modello.score()
 modello.performance()
-modello.distribuzione_parametri()
+modello.visualizzazione_dati()

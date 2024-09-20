@@ -43,7 +43,7 @@ matrice = confusion_matrix(y_test,predizione)
 df = pd.DataFrame(data=x, columns=wine.feature_names)
 df['target'] = y
 
-print(f"Visualizzo le prime 5 righe del dataset Wine:\n {df.head()}")
+print(f"Visualizzo le prime 5 righe del dataset Wine:\n {df['target'].head()}")
 
 print()
 

@@ -32,9 +32,9 @@ class Fabbrica:
         for key,values in self.inventario.items():
             print(f"La quantità di prodotto {key} è {values[0]} e il guadagno generato è {values[1]}")
 
-prod = prodotto.Elettronica("Ps5",300,550)
-prod1 = prodotto.BicchieriPlastica("Bio",0.60,1.20)
-f = fabbrica()
+prod = Prodotto.Elettronica("Ps5",300,550)
+prod1 = Prodotto.BicchieriPlastica("Bio",0.60,1.20)
+f = Fabbrica()
 f.aggiungi_prodotti(prod)
 prod.stampa()
 # f.aggiungi_prodotti(prod1)

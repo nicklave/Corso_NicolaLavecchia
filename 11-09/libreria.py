@@ -10,7 +10,7 @@ class Libreria:
             print("Input errato! Serve una lista vuota")
     
     def aggiungiLibro(self,l):
-        if isinstance(l,libro.Libro):
+        if isinstance(l,Libro.Libro):
             self.catalogo.append(l)
     
     def rimuoviLibro(self,isbn):
@@ -30,8 +30,8 @@ class Libreria:
         return l
 
 Lib = Libreria([])
-l = libro.Libro("One piece", "Eichiro Oda", 123)
-l1 = libro.Libro("Dragon ball", "Akira Toriyama", 345)
+l = Libro.Libro("One piece", "Eichiro Oda", 123)
+l1 = Libro.Libro("Dragon ball", "Akira Toriyama", 345)
 Lib.aggiungiLibro(l)
 Lib.aggiungiLibro(l1)
 Lib.rimuoviLibro(123)

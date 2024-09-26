@@ -1,7 +1,6 @@
 
-
+import math
 class Punto:
-
     def __init__(self,x,y):
         try:
             if not isinstance(x,float):

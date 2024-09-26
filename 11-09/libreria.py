@@ -1,4 +1,4 @@
-import libro
+from Libro import *
 
 class Libreria:
 

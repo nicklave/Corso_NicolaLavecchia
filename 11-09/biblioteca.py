@@ -1,4 +1,4 @@
-import libro
+from Libro import *
 
 class Biblioteca:
     def __init__(self):

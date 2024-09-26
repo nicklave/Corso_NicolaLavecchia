@@ -1,6 +1,6 @@
-import prodotto
+from Prodotto import *
 
-class fabbrica:
+class Fabbrica:
 
     def __init__(self):
         self.inventario = {}

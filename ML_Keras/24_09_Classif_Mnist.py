@@ -22,31 +22,31 @@ y_test = lb.fit_transform(y_test)
 
 model = Sequential()
 
-model.add(Dense(units=64, activation='relu', input_shape=(784,)))
-model.add(Dense(units=10, activation='softmax'))
+# model.add(Dense(units=64, activation='relu', input_shape=(784,)))
+# model.add(Dense(units=10, activation='softmax'))
 
 
-model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['accuracy','Precision'])
+# model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['accuracy','Precision'])
 
 
-history = model.fit(X_train, y_train,
-                    epochs=5,
-                    batch_size=16,
-                    validation_split=0.15)
+# history = model.fit(X_train, y_train,
+#                     epochs=5,
+#                     batch_size=16,
+#                     validation_split=0.15)
 
 # Perdita sul test set: 0.0942
 # Accuratezza sul test set: 0.9740
 
-# model.add(Dense(units=128, activation='relu', input_shape=(784,)))
-# model.add(Dense(units=64, activation='relu'))
-# model.add(Dense(units=10, activation='softmax'))
+model.add(Dense(units=128, activation='relu', input_shape=(784,)))
+model.add(Dense(units=64, activation='relu'))
+model.add(Dense(units=10, activation='softmax'))
 
-# model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['accuracy','Precision'])
+model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['accuracy','Precision'])
 
-# history = model.fit(X_train, y_train,
-#                     epochs=10,
-#                     batch_size=32,
-#                     validation_split=0.1)
+history = model.fit(X_train, y_train,
+                    epochs=10,
+                    batch_size=32,
+                    validation_split=0.1)
 
 # Perdita sul test set: 0.1010
 # Accuratezza sul test set: 0.9778

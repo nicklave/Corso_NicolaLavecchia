@@ -1,2 +1,2 @@
 # CorsoExperis_NicolaLavecchia
-Esercitazioni in Python
+Repository contenente gli esercizi svolti durante il corso

@@ -1,0 +1,11 @@
+ML è un ramo dell'AI che permette alla macchina di imparare dai dati in modo automatico e di migliorare autonomamente.
+
+Le fasi sono: 
+Caricamento dei dati: include raccolta e pre elaborazione dei dati 
+Divisione dei dati: Una percentuale verrà usata come train set e la restante come test set
+Creazione del modello: In base ai dati raccolti avviene la scelta del modello più opportuno
+Addestramento del modello: Permette al modello di apprendere i dati
+Predizione: Esegue una predizione sui dati di test 
+Calcolo degli score: Si visualizza un risultato che può essere accuracy o precisione o un altro tipo di misura.
+
+Le tre più importanti sono creazione, addestramento e predizione

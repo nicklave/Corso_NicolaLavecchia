@@ -1,0 +1,14 @@
+I seguenti modelli fanno parte della libreria SciKit learn in python, ognuno di essi è un'istanza di una classe che implementa un algoritmo. Si dividono in modelli di regressione o classificazione a seconda del problema.
+Si dividono a loro volta in supervisionati, non supervisionati e per rinforzo.
+
+I primi utilizzano un dataset con etichette note, richiedono però grandi quantità di dati per imparare l'etichetta alla quale i dati corrispondono. Alcuni di questi sono:
+
+Linear regression: modello usato per predire un valore su una base di dati quantitativi continui
+
+Logistic regression: modello usato per predire classi, infatti nonostante il nome si avvicina più ad un modello di classificazione
+
+KNN: algoritmo di classificazione che assegna etichette in base ai vicini più vicini(non costruisce un modello esplicito)
+
+I non supervisionati non utilizzano etichette e sono perciò meno precisi ma utili per l'esplorazione dei dati. Un esempio:
+
+Kmeans: Divide i dati in cluster in base alla media dello score ottenuto

@@ -1,0 +1,9 @@
+Le tre regole fondamentali dell'OOP sono:
+
+Incapsulamento: è la capacità di codice di nascondere alcune parti di codice esternandone altre, in particolare si accede agli elementi nascosti tramite altri metodi che sono comunemente chiamati pubblici
+
+Ereditarietà: Permette ad una classe di ereditare attributi da una classe madre secondo un ragionamento gerarchico, le classi figlie erediteranno tutti o alcuni attributi della classe madre potendone avere di nuovi, non accade viceversa
+
+Polimorfismo: La capacità di un elemento di cambiare forma ma non comportamento e viceversa. Ovvero oggetti di diverse classi possono essere trattati allo stesso modo di una classe più generale a patto che non differiscano nella forma
+
+Astrazione: Regola madre. Rende rilevanti le operazioni che è possibile eseguire su un oggetto nascondendone i dettagli. Senza di essa le tre regole fondamentali non potrebbero verificarsi

@@ -1,3 +1,0 @@
-Il data scientist ha il compito di raccogliere, analizzare, pulire e trasformare grandi quantità di dati. Identifica pattern e costruisce modelli statistici al fine di effettuare analisi di tipo predittivo.
-Il business analyst è invece il collegamento tra la parte tecnica e la parte procedurale in un'azienda. Quest'ultimo ha infatti potere decisionale e lavora a contatto con le persone che partecipano agli interessi aziendali.
-Riguardo il rapporto tra i due, il business analyst prende i risultati ottenuti dal data scientist e li interpreta in un contesto più ampio e generico.

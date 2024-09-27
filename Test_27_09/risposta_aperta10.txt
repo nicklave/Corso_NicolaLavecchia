@@ -1,0 +1,12 @@
+
+Il deep learning è un sottocampo del Machine learning che utilizza le reti neurali, è capace di apprendere grandi quantità di dati strutturate in modo complesso.
+Per implementarlo utilizziamo generalmente TensorFlow ma nello specifico Keras che offre un API che semplifica le fasi che vedremo:
+
+Modello Sequenziale:  ogni strato ha esattamente un input e un output perciò il flusso è diretto. Si decide che tipo di rete usare quindi se convoluzionale o denso e si impostano i miglior parametri possibili a seconda del dataset
+
+Compilazione del Modello: si specificano ottimizzatore, di solito si usa adam, per determinare i pesi, funziona di perdita.
+
+Addestramento: metodo fit per addestrare il modello, specifico epochs cioè quante volte il modello dovrà esplorare il dataset divisi in batch tramite il comando batch size e si splitta nuovamente il dataset per avere un validation set. esempio 100 dati nel dataset: per 10 epoche vedrò il 90% dei dati divisi in 32 batch
+
+Valutazione: Dopo l'addestramento, si può valutare il modello sui dati di test e
+ fare predizioni su nuovi dati.
